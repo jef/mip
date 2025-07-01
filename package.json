@@ -1,0 +1,27 @@
+{
+  "name": "@jef/mip",
+  "version": "0.0.0",
+  "description": "mip - Most Improved Player calculator based on GHIN handicap index.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "golf",
+    "handicap",
+    "improvement"
+  ],
+  "scripts": {
+    "clean": "gts clean",
+    "compile": "tsc",
+    "dev": "npm run compile && npx http-server . -p 8080 -o public/index.html",
+    "fix": "gts fix",
+    "lint": "gts lint"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "gts": "^6.0.2",
+    "typescript": "^5.6.3"
+  },
+  "volta": {
+    "node": "22.17.0"
+  }
+}
