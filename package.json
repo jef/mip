@@ -12,7 +12,8 @@
   "scripts": {
     "clean": "gts clean",
     "compile": "tsc",
-    "dev": "npm run compile && npx http-server . -p 8080 -o public/index.html",
+    "build": "npm run compile && cp -r public/* build/",
+    "dev": "npm run build && npx http-server ./build -p 8080",
     "fix": "gts fix",
     "lint": "gts lint"
   },
