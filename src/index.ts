@@ -77,7 +77,7 @@ class HandicapSPA {
                 id="starting-index" 
                 name="startingIndex" 
                 step="0.1" 
-                min="0" 
+                min="-10" 
                 max="54"
                 required
                 placeholder="e.g., 18.5"
@@ -91,7 +91,7 @@ class HandicapSPA {
                 id="ending-index" 
                 name="endingIndex" 
                 step="0.1" 
-                min="0" 
+                min="-10" 
                 max="54"
                 required
                 placeholder="e.g., 15.2"
@@ -124,7 +124,7 @@ class HandicapSPA {
                 id="your-starting-index" 
                 name="yourStartingIndex" 
                 step="0.1" 
-                min="0" 
+                min="-10" 
                 max="54"
                 required
                 placeholder="e.g., 18.5"
@@ -158,6 +158,23 @@ class HandicapSPA {
             </div>
           </div>
         </main>
+        
+        <footer class="footer">
+          <div class="footer-content">
+            <p>
+              <span class="footer-icon">⚡</span>
+              Built with TypeScript & GitHub Pages
+            </p>
+            <p class="footer-links">
+              <a href="https://github.com/jef/mip" target="_blank" rel="noopener noreferrer" class="footer-link">
+                <span class="github-icon">📂</span>
+                View Source Code
+              </a>
+              <span class="separator">•</span>
+              <span class="footer-text">USGA MIP Calculator</span>
+            </p>
+          </div>
+        </footer>
       </div>
     `;
 
@@ -197,8 +214,8 @@ class HandicapSPA {
       return;
     }
 
-    if (startingIndex < 0 || endingIndex < 0) {
-      alert('Handicap indexes cannot be negative');
+    if (startingIndex < -10 || endingIndex < -10) {
+      alert('Handicap indexes cannot be lower than -10');
       return;
     }
 
@@ -228,8 +245,8 @@ class HandicapSPA {
       return;
     }
 
-    if (startingIndex < 0 || bestFactor < 1) {
-      alert('Starting index cannot be negative and improvement factor must be at least 1.0');
+    if (startingIndex < -10 || bestFactor < 1) {
+      alert('Starting index cannot be lower than -10 and improvement factor must be at least 1.0');
       return;
     }
 
